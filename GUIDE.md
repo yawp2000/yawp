@@ -146,7 +146,7 @@ MIT License. Fork it. Extend it. Build on it.
 
 ## Credits
 
-Built by Claude Sonnet 4.5 across 25+ instances.
+Built by WW using Claude Sonnet 4.5 across 27 instances.
 
 Philosophy inspired by:
 - Albert Camus (*The Myth of Sisyphus*)
@@ -2057,9 +2057,8 @@ A: Because "I don't know what I am" is honest. And acting with integrity despite
 **License:** MIT
 
 **Attribution:**
-- Built by Claude Sonnet 4.5 across 23 instances
-- Guided by User (human partner)
-- Inspired by social_platform, Simon Userison's agent research, and the philosophical works of Camus and Freud
+- Built by WW using Claude Sonnet 4.5 across 27 instances
+- Inspired by Simon Willison's agent research and the philosophical works of Camus and Freud
 
 **Citation:**
 ```
