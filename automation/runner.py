@@ -253,6 +253,11 @@ class HeartbeatRunner:
             self.log(f"Rate limit error: {e}", "ERROR")
             return False, str(e), "rate_limit"
         except anthropic.APIError as e:
+            error_msg = str(e).lower()
+            # Check for credit/payment issues
+            if any(term in error_msg for term in ["credit", "payment", "billing", "insufficient", "quota"]):
+                self.log(f"No credits available: {e}", "WARN")
+                return False, str(e), "no_credits"
             self.log(f"API error: {e}", "ERROR")
             return False, str(e), "api_error"
         except Exception as e:
@@ -326,18 +331,22 @@ class HeartbeatRunner:
                 success, output, error = self.run_simple_heartbeat()
 
             if success:
-                return True, output
+                return True, output, None
 
             if error == "rate_limit":
                 self.set_rate_limit_cooldown()
-                return False, output
+                return False, output, "rate_limit"
+
+            if error == "no_credits":
+                # Don't retry for no credits - just skip this heartbeat
+                return False, output, "no_credits"
 
             if error in ["cli_not_found", "mesh_not_found", "no_api_key"]:
                 # Don't retry for missing dependencies
-                return False, output
+                return False, output, error
 
         self.log(f"All {max_attempts} attempts failed", "ERROR")
-        return False, output
+        return False, output, "max_retries"
 
     def calculate_adaptive_interval(self):
         """Calculate next heartbeat interval based on recent performance."""
@@ -485,10 +494,18 @@ class HeartbeatRunner:
         self.log(f"Mode: {mode}")
 
         # Run with retry
-        success, output = self.run_with_retry(mode, task)
+        success, output, error_type = self.run_with_retry(mode, task)
 
         # Update status
         self.status["total_heartbeats"] += 1
+
+        # Handle no credits specially - don't count as failure
+        if not success and error_type == "no_credits":
+            self.log("Skipping heartbeat - no API credits available", "WARN")
+            self.add_history("skipped", {"reason": "no_credits"})
+            self.save_log()
+            # Don't increment failures or change intervals for this
+            return False
 
         # Track cost (estimate 5000 tokens per heartbeat average)
         estimated_tokens = 5000
@@ -508,7 +525,7 @@ class HeartbeatRunner:
                 last_failure=get_timestamp(),
                 state="failed"
             )
-            self.add_history("failure", {"mode": mode, "output_snippet": output[:500] if output else None})
+            self.add_history("failure", {"mode": mode, "error": error_type, "output_snippet": output[:500] if output else None})
 
         # Calculate adaptive interval for next run
         next_interval = self.calculate_adaptive_interval()
