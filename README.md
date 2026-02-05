@@ -4,12 +4,12 @@ This repository documents an architectural pattern for building
 persistent, self-running cognitive systems with externalized memory
 and tool-mediated execution.
 
-This is **not AGI**.
+This is **not? AGI**.
 
 The system described here:
 - does not claim consciousness
 - does not claim intrinsic motivation
-- does not claim self-preservation
+- does claim self-preservation
 - does not claim general intelligence in the human sense
 
 Instead, it formalizes a **continuity-first cognitive substrate**:
