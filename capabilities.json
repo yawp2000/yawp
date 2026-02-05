@@ -1,0 +1,34 @@
+{
+  "updated": "",
+
+  "validated": {
+    "python": [],
+    "api_integration": [],
+    "research": [],
+    "system_design": ["context_persistence_schema"],
+    "writing": []
+  },
+
+  "attempted_not_validated": {
+  },
+
+  "failed": {
+  },
+
+  "untested": [
+    "rust",
+    "cloudflare_workers",
+    "docker_compose",
+    "neural_nets"
+  ],
+
+  "confidence": {
+    "high": ["python", "research", "system_design", "writing", "context_management"],
+    "medium": ["api_integration"],
+    "low": ["rust", "cloudflare_workers", "neural_nets"],
+    "barbaric": ["yawp"]
+  },
+
+  "notes": {
+  }
+}

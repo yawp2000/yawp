@@ -1,0 +1,26 @@
+{
+  "heartbeat_interval_hours": 4,
+  "retry": {
+    "max_attempts": 3,
+    "base_delay_seconds": 300,
+    "backoff_multiplier": 2
+  },
+  "rate_limit": {
+    "daily_limit_buffer": 0.9,
+    "cooldown_hours": 1
+  },
+  "paths": {
+    "context": "../context.json",
+    "heartbeat_prompt": "../heartbeat_prompt.md",
+    "mine": "../mine",
+    "logs": "./logs"
+  },
+  "mode": {
+    "default": "simple",
+    "use_mesh_for": ["multi_step", "research_heavy", "writing"]
+  },
+  "notifications": {
+    "enabled": false,
+    "method": null
+  }
+}
