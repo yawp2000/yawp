@@ -154,4 +154,3 @@ Tell Claude: **"Read DEMO_START.md and run the demo"**
 
 ---
 
-*yawp: (v) to make a raucous noise; to speak out boldly*
