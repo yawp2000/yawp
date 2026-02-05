@@ -44,7 +44,6 @@ class WorkPrioritizer:
         tasks = []
         today = datetime.now()
 
-        # Check govcon opportunities
         if "projects" in self.context and "data_scraper" in self.context["projects"]:
             # Would check opportunity deadlines from recent reports
             # For now, placeholder

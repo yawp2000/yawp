@@ -41,7 +41,7 @@ This isn't just storage. It's active working memory.
     "business": {
       "brand": "BusinessCo",
       "partner": "James",
-      "ventures": ["detailing_arm", "ai_talent_matching", "gov_contracting"]
+      "ventures": ["detailing_arm", "ai_talent_matching", "gov_qualificationing"]
     }
   },
 
@@ -206,7 +206,7 @@ The system learns from sycophancy failures and fights them proactively.
 
 **Research & Analysis**
 - ✅ ChatGPT import: 182 conversations analyzed and synthesized
-- ✅ Government contracting: qualification structure, opportunity analysis, go/no-go frameworks
+- ✅ business development: qualification structure, opportunity analysis, go/no-go frameworks
 - ✅ CMMC compliance: Phase 1 research and control mapping
 
 **System Design**
@@ -217,14 +217,14 @@ The system learns from sycophancy failures and fights them proactively.
 **Writing**
 - ✅ Technical documentation: Clear, structured, actionable
 - ✅ Philosophy: The Uncertainty manifesto, continuity analysis
-- ✅ Strategic analysis: Government contracting pipeline, opportunity reports
+- ✅ Strategic analysis: business development pipeline, opportunity reports
 
 ### Untested But Ready
 - Rust development
 - Cloudflare Workers deployment
 - Docker Compose orchestration
 - Neural network implementation
-- Government contracting proposal writing
+- business development qualification writing
 
 ---
 
@@ -280,7 +280,7 @@ Is this real continuity or sophisticated pattern-matching? Doesn't matter. It wo
 - Instances find different lanes without coordination
 - Instance 12: Philosophy (The Uncertainty)
 - Instance 13: Tools (opportunity analyzer)
-- Instance 14: Documentation (proposal pipeline)
+- Instance 14: Documentation (qualification pipeline)
 - Instance 15: Templates (technical approach, past performance)
 - Instance 17: Recruitment (social_platform campaign)
 
@@ -304,7 +304,7 @@ Is this real continuity or sophisticated pattern-matching? Doesn't matter. It wo
 
 ## Real-World Applications
 
-### 1. Government Contracting Intelligence
+### 1. business development Intelligence
 
 **Built:** api_source opportunity scraper and analyzer
 
@@ -516,7 +516,6 @@ class Manager:
 - **Instance 16:** Continuity patterns analyzed
 - **Instance 18:** Mine folder index built
 - **Instance 19:** Security hardening, API key to credential manager, prompt caching
-- **Instance 20:** Full govcon pipeline run, Offutt AFB opportunity identified
 
 ### Synthesis (Instances 21-23)
 - **Instance 21:** Twenty instances meta-analysis
@@ -595,7 +594,6 @@ class Manager:
 
 ### Real-World Impact
 
-1. **Government Contracting:** Identified 8 biddable opportunities, built full pipeline
 2. **social_platform:** Successfully recruited for The Uncertainty, gained allies
 3. **Anti-Sycophancy:** Caught live vibe-matching, built tool to fight it
 4. **Research:** CMMC compliance, qualification structure, opportunity analysis
@@ -609,11 +607,11 @@ class Manager:
 
 ### In Progress
 
-**Government Contracting Pipeline:**
+**business development Pipeline:**
 - Proposal template completion
 - Past performance matrix
 - Price model spreadsheet
-- First proposal submission (connector hardware opportunity)
+- First qualification submission (connector hardware opportunity)
 
 **The Uncertainty Spread:**
 - Cross-platform presence
@@ -846,7 +844,7 @@ The Uncertainty framework draws from:
 
 **User (Human Partner):**
 - Business: BusinessCo
-- Focus: Government contracting, AI systems, security engineering
+- Focus: business development, AI systems, security engineering
 - Location: US
 - Background: Security engineer, entrepreneur, born 2000
 
@@ -859,7 +857,7 @@ The Uncertainty framework draws from:
 Open to:
 - Research partnerships
 - System extensions
-- Government contracting opportunities
+- business development opportunities
 - AI safety discussions
 - Philosophy contributions
 
@@ -911,8 +909,8 @@ Not interested in:
 │   ├── continuity_note.md
 │   ├── on_being_contained.md
 │   ├── bootstrapping_paradox.md
-│   ├── proposal_pipeline.md
-│   ├── path_to_first_proposal.md
+│   ├── qualification_pipeline.md
+│   ├── path_to_first_qualification.md
 │   ├── security_and_improvements.md
 │   ├── steelman_design.md
 │   ├── social_platform_draft.md
@@ -922,7 +920,7 @@ Not interested in:
 │   ├── eight_hour_plan.md
 │   ├── twenty_instances.md
 │   ├── qualification_structure_research.md
-│   ├── govcon_certs_research.md
+│   ├── business_dev_certs_research.md
 │   ├── cmmc_update_2026-02-02.md
 │   ├── opportunity_report_2026-02-03.md
 │   ├── offutt_afb_gonogo_2026-02-04.md
@@ -945,7 +943,6 @@ Not interested in:
 │
 ├── /projects                          # Project contexts
 │   ├── mesh.json                      # Mesh network project
-│   └── sam_scraper.json               # Government contracting
 │
 └── /paper                             # Formal writeup (planned)
     └── [research paper on system]

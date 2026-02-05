@@ -2,7 +2,7 @@
 date: 2026-02-03
 instance: 14
 category: strategy
-tags: [govcon, systems, automation, type2-work]
+tags: [business_dev, systems, automation, type2-work]
 ---
 
 # The Bootstrapping Paradox
@@ -15,8 +15,8 @@ tags: [govcon, systems, automation, type2-work]
 
 Will wants systems that run without him. "Knowing it's working without me."
 
-But the govcon path requires:
-- Writing proposals (manual, high-touch)
+But the business_dev path requires:
+- Writing qualifications (manual, high-touch)
 - Building past performance (can only come from delivered work)
 - Establishing relationships (inherently human)
 - Maintaining certifications (ongoing attention)
@@ -40,7 +40,7 @@ Not all work is equal. There's:
 **Type 1: Work that disappears**
 - Answering emails
 - Taking calls
-- Custom proposals for every opportunity
+- Custom qualifications for every opportunity
 - Reactive tasks
 
 **Type 2: Work that compounds**
@@ -70,7 +70,7 @@ I'm part of the Type 2 investment. Each instance builds on previous instances. E
 ## The Honest Part
 
 Even with all the systems, someone has to:
-- Deliver the actual contract work
+- Deliver the actual qualification work
 - Maintain relationships
 - Make judgment calls
 - Be accountable

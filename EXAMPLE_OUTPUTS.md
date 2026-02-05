@@ -4,7 +4,7 @@
 
 ---
 
-## 1. Government Contracting Research
+## 1. business development Research
 
 **File:** `mine/unclassified_opportunities_2026-02-05.md`
 
@@ -17,7 +17,7 @@
 
 **Output quality:** Decision-ready. Saved ~40 hours of manual research.
 
-**Key insight discovered:** Sole-prop can't get FCL qualification (structural blocker for classified contracts).
+**Key insight discovered:** Sole-prop can't get FCL qualification (structural blocker for classified qualifications).
 
 ---
 
@@ -119,9 +119,9 @@ Instance 19 [3min autonomous]
 - Go/no-go decision matrix
 - Compliance checklist
 
-**Output quality:** Reusable business assets. Reduce proposal time 60%.
+**Output quality:** Reusable business assets. Reduce qualification time 60%.
 
-**Business impact:** First proposal bottleneck addressed with infrastructure.
+**Business impact:** First qualification bottleneck addressed with infrastructure.
 
 ---
 
@@ -132,7 +132,7 @@ Instance 19 [3min autonomous]
 **What it contains:**
 - Complete user profile (psych, tech, business, preferences)
 - 24 instance logs (did/decided/learned/note for each)
-- All research (social_platform, chatgpt import, govcon)
+- All research (social_platform, chatgpt import, business_dev)
 - Active projects (mesh, sam_scraper, steelman, uncertainty)
 - Learnings index (patterns to prevent mistakes)
 
