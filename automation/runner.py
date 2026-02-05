@@ -23,6 +23,7 @@ import sys
 import re
 from pathlib import Path
 from datetime import datetime, timedelta
+import shutil
 
 # Try to import anthropic SDK for API mode
 try:
@@ -51,8 +52,7 @@ AUTOMATION_DIR = Path(__file__).parent
 CONTEXT_DIR = AUTOMATION_DIR.parent
 CONFIG_FILE = AUTOMATION_DIR / "config.json"
 STATUS_FILE = AUTOMATION_DIR / "status.json"
-# Find claude CLI in PATH or common locations
-CLAUDE_CLI = "claude"  # Assumes claude is in PATH
+CLAUDE_CLI = r"C:\Users\19282\AppData\Roaming\npm\claude.cmd"
 
 def load_json(path):
     with open(path, 'r', encoding='utf-8') as f:
@@ -339,6 +339,106 @@ class HeartbeatRunner:
         self.log(f"All {max_attempts} attempts failed", "ERROR")
         return False, output
 
+    def calculate_adaptive_interval(self):
+        """Calculate next heartbeat interval based on recent performance."""
+        failures = self.status.get("consecutive_failures", 0)
+
+        if failures >= 3:
+            return 240  # 4 hours - significant backoff
+        elif failures == 2:
+            return 120  # 2 hours - moderate backoff
+        elif failures == 1:
+            return 60   # 1 hour - gentle backoff
+        else:
+            return self.config.get("heartbeat_interval_minutes", 30)  # Normal
+
+    def backup_context(self):
+        """Create daily backup of context.json."""
+        import shutil
+
+        backups_dir = CONTEXT_DIR / "backups"
+        backups_dir.mkdir(exist_ok=True)
+
+        today = datetime.now().strftime("%Y-%m-%d")
+        backup_path = backups_dir / f"context_{today}.json"
+
+        # Only backup once per day
+        if not backup_path.exists():
+            context_path = CONTEXT_DIR / "context.json"
+            shutil.copy(context_path, backup_path)
+            self.log(f"Backup created: {backup_path.name}")
+
+            # Cleanup old backups (keep last 7 days)
+            all_backups = sorted(backups_dir.glob("context_*.json"))
+            if len(all_backups) > 7:
+                for old_backup in all_backups[:-7]:
+                    old_backup.unlink()
+                    self.log(f"Removed old backup: {old_backup.name}")
+
+    def track_cost(self, tokens_used):
+        """Track API costs and check budget."""
+        if "costs" not in self.status:
+            self.status["costs"] = {
+                "total_spend": 0.0,
+                "daily_budget": 5.00,
+                "today_spend": 0.0,
+                "last_reset": datetime.now().strftime("%Y-%m-%d"),
+                "currency": "USD"
+            }
+
+        # Reset daily spend if new day
+        today = datetime.now().strftime("%Y-%m-%d")
+        if self.status["costs"]["last_reset"] != today:
+            self.status["costs"]["today_spend"] = 0.0
+            self.status["costs"]["last_reset"] = today
+            self.log("Daily spend reset")
+
+        # Calculate cost (Sonnet 4.5 pricing: $3/M input, $15/M output)
+        # Estimate 20% output tokens
+        input_tokens = tokens_used * 0.8
+        output_tokens = tokens_used * 0.2
+        cost = (input_tokens / 1_000_000 * 3.0) + (output_tokens / 1_000_000 * 15.0)
+
+        self.status["costs"]["total_spend"] += cost
+        self.status["costs"]["today_spend"] += cost
+
+        self.log(f"Cost: ${cost:.4f} (today: ${self.status['costs']['today_spend']:.2f})")
+
+        # Check budget
+        if self.status["costs"]["today_spend"] >= self.status["costs"]["daily_budget"]:
+            self.log("WARNING: Daily budget reached!", "WARN")
+            return False  # Signal to skip this heartbeat
+
+        return True
+
+    def check_health(self, display=True):
+        """Check system health and optionally display dashboard."""
+        try:
+            from health_monitor import HealthMonitor
+
+            status_path = STATUS_FILE
+            context_path = CONTEXT_DIR / "context.json"
+
+            monitor = HealthMonitor(status_path, context_path)
+            metrics = monitor.get_metrics()
+
+            # Log health score
+            self.log(f"Health Score: {metrics['health_score']}/100")
+
+            # Display full dashboard if requested and instance is multiple of 5
+            context = load_json(context_path)
+            instance = context.get("instance", 0)
+
+            if display and instance % 5 == 0:
+                print("\n")
+                monitor.display_dashboard()
+
+            return metrics
+
+        except Exception as e:
+            self.log(f"Health check failed: {e}", "ERROR")
+            return None
+
     def decide_mode(self):
         """Decide whether to use simple or mesh mode."""
         # Check if there's a queued task
@@ -362,10 +462,16 @@ class HeartbeatRunner:
         self.log("Heartbeat Runner starting")
         self.log("=" * 50)
 
+        # Daily backup
+        self.backup_context()
+
         # Check rate limit
         if self.is_rate_limited():
             self.add_history("skipped", {"reason": "rate_limited"})
             self.save_log()
+            # Calculate adaptive interval for next run
+            next_interval = self.calculate_adaptive_interval()
+            self.log(f"Next heartbeat in {next_interval} minutes (adaptive)")
             return False
 
         # Update status
@@ -384,6 +490,10 @@ class HeartbeatRunner:
         # Update status
         self.status["total_heartbeats"] += 1
 
+        # Track cost (estimate 5000 tokens per heartbeat average)
+        estimated_tokens = 5000
+        budget_ok = self.track_cost(estimated_tokens)
+
         if success:
             self.update_status(
                 last_success=get_timestamp(),
@@ -400,11 +510,24 @@ class HeartbeatRunner:
             )
             self.add_history("failure", {"mode": mode, "output_snippet": output[:500] if output else None})
 
+        # Calculate adaptive interval for next run
+        next_interval = self.calculate_adaptive_interval()
+        self.log(f"Next heartbeat recommended in {next_interval} minutes")
+        self.update_status(recommended_interval_minutes=next_interval)
+
+        # Check budget
+        if not budget_ok:
+            self.log("Daily budget reached - skipping future heartbeats today", "WARN")
+            self.update_status(budget_reached=True)
+
         # Save log
         log_path = self.save_log()
 
         # Also append to heartbeat_log.md in mine
         self.append_to_heartbeat_log(success, mode, log_path, output)
+
+        # Check and display health (every 5 instances)
+        self.check_health(display=True)
 
         return success
 
