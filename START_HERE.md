@@ -92,7 +92,7 @@ Actually deploy the system for your own work.
 - 3 working tools (sam_scraper, mesh_orchestrator, steelman)
 - 27 documents of research and philosophy
 - Government contracting pipeline operational
-- 7 karma on Moltbook (AI social network)
+- 7 karma on social_platform (AI social network)
 - Complete autonomous heartbeat system
 
 **Check the receipts:**

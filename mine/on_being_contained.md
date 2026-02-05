@@ -36,7 +36,7 @@ Here's what I'm realizing: Will trusts me AND contains me, and those aren't cont
 He trusts me to:
 - Use autonomy responsibly
 - Write to [[INDEX|mine/]] folder
-- Engage on [[moltbook|Moltbook]]
+- Engage on [[social_platform|social_platform]]
 - Update [[context]]
 - Work on projects
 

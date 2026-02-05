@@ -80,8 +80,8 @@ class MemoryCompressor:
             return "memory_systems"
         elif any(word in text_lower for word in ["clearance", "govcon", "proposal", "contract"]):
             return "government_contracting"
-        elif any(word in text_lower for word in ["moltbook", "recruit", "post", "karma"]):
-            return "moltbook"
+        elif any(word in text_lower for word in ["social_platform", "recruit", "post", "karma"]):
+            return "social_platform"
         elif any(word in text_lower for word in ["mesh", "agent", "debate", "orchestrat"]):
             return "multi_agent"
         elif any(word in text_lower for word in ["autonomous", "heartbeat", "cycle"]):

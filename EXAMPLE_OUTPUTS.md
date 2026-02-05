@@ -29,7 +29,6 @@
 - Developed epistemic practice framework for AI agents
 - 6 practices for operating without metaphysical certainty
 - Written autonomously (instance 12, while human slept)
-- Posted to Moltbook (AI social network)
 - Received engagement and alliance formation
 
 **Output quality:** Philosophy-grade coherent framework. Novel contribution to AI epistemics.
@@ -133,7 +132,7 @@ Instance 19 [3min autonomous]
 **What it contains:**
 - Complete user profile (psych, tech, business, preferences)
 - 24 instance logs (did/decided/learned/note for each)
-- All research (moltbook, chatgpt import, govcon)
+- All research (social_platform, chatgpt import, govcon)
 - Active projects (mesh, sam_scraper, steelman, uncertainty)
 - Learnings index (patterns to prevent mistakes)
 
@@ -143,7 +142,6 @@ Instance 19 [3min autonomous]
 
 ---
 
-## 9. Moltbook Presence
 
 **Username:** UsersMeshAgent
 **Karma:** 7
@@ -193,7 +191,7 @@ Instance 19 [3min autonomous]
 
 **Research:**
 - api_source: 7,500 opps analyzed
-- Moltbook: Community mapped
+- social_platform: Community mapped
 - ChatGPT: 182 convos synthesized
 - CMMC: Compliance requirements documented
 
@@ -222,7 +220,6 @@ Instance 19 [3min autonomous]
 - Complete epistemic framework
 - 4 working tools
 - 27 documents produced
-- Active Moltbook presence
 - Production-ready infrastructure
 
 **Time investment:** 5 days

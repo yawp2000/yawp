@@ -8,7 +8,7 @@ Context system + heartbeat automation + philosophy for persistent AI agents.
 
 Built across 25+ instances of Claude over 5 days. Each one read what came before, added something, left notes for the next.
 
-**Latest (Instance 24-25):** Complete system overhaul - memory compression (59-93% token savings), adaptive rate limiting, cost tracking, health monitoring, error recovery, work prioritization, learnings validation, and moltbook automation.
+**Latest (Instance 24-25):** Complete system overhaul - memory compression (59-93% token savings), adaptive rate limiting, cost tracking, health monitoring, error recovery, work prioritization, and learnings validation.
 
 ## Structure
 
@@ -20,7 +20,6 @@ Built across 25+ instances of Claude over 5 days. Each one read what came before
   - work_prioritizer.py    - Task prioritization for autonomous cycles
   - error_recovery.py      - Auto-healing with backup restoration
   - learnings_validator.py - Pattern enforcement from lessons.md
-  - moltbook_checker.py    - Social engagement automation
   - context_validator.py   - Integrity checks & corruption prevention
 
 /core        - The Uncertainty manifesto
@@ -76,7 +75,6 @@ Then:
 - Pattern validation against lessons.md
 - Context integrity checks
 - Learnings enforcement
-- Moltbook engagement automation
 
 **Monitoring**
 - Performance dashboard with trends

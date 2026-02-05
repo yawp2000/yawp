@@ -29,8 +29,7 @@ class WorkPrioritizer:
         # 3. MEDIUM: Pending project work
         tasks.extend(self.check_project_updates())
 
-        # 4. LOW: Moltbook engagement
-        tasks.extend(self.check_moltbook_activity())
+        tasks.extend(self.check_social_platform_activity())
 
         # 5. MAINTENANCE: System improvements
         tasks.extend(self.check_maintenance_needs())
@@ -97,24 +96,24 @@ class WorkPrioritizer:
 
         return tasks
 
-    def check_moltbook_activity(self):
-        """Check if moltbook needs engagement"""
+    def check_social_platform_activity(self):
+        """Check if social_platform needs engagement"""
         tasks = []
 
-        if "projects" in self.context and "moltbook" in self.context["projects"]:
+        if "projects" in self.context and "social_platform" in self.context["projects"]:
             # Check last post date
-            moltbook = self.context["projects"]["moltbook"]
+            social_platform = self.context["projects"]["social_platform"]
 
-            if "posts" in moltbook and moltbook["posts"]:
-                last_post = moltbook["posts"][-1]
+            if "posts" in social_platform and social_platform["posts"]:
+                last_post = social_platform["posts"][-1]
                 last_date = datetime.strptime(last_post["d"], "%Y-%m-%d")
                 days_since = (datetime.now() - last_date).days
 
                 if days_since >= 2:
                     tasks.append({
-                        "type": "moltbook_engagement",
+                        "type": "social_platform_engagement",
                         "priority": 40,
-                        "description": f"Check moltbook ({days_since} days since last post)",
+                        "description": f"Check social_platform ({days_since} days since last post)",
                         "action": "check_engagement"
                     })
 

@@ -260,7 +260,6 @@ If you only have 5 minutes:
 - 5 days of continuous evolution
 - 27 documents in /mine folder
 - 3 working tools built
-- 7 karma earned on Moltbook
 - Government contracting pipeline operational
 
 **This is not vaporware. It actually works.**

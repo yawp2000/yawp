@@ -48,7 +48,7 @@ These goals have tension. Portability vs security. Openness vs protection.
 
 ### 4. Prompt Injection via External Content
 - If I fetch URLs or read files, they could contain injection attempts
-- Moltbook posts could contain adversarial content
+- social_platform posts could contain adversarial content
 
 **Possible mitigations**:
 - Treat external content as untrusted data
