@@ -37,7 +37,6 @@ Explicitly excluded:
 - intrinsic goals or values
 - self-generated motivation
 - claims of sentience
-- claims of AGI
 
 ## Status
 
