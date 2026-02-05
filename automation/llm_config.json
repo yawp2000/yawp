@@ -1,0 +1,55 @@
+{
+  "providers": {
+    "anthropic": {
+      "enabled": true,
+      "api_key_env": "ANTHROPIC_API_KEY",
+      "models": ["claude-opus", "claude-sonnet", "claude-haiku"]
+    },
+    "openai": {
+      "enabled": false,
+      "api_key_env": "OPENAI_API_KEY",
+      "models": ["gpt4", "gpt4-turbo", "gpt-35"]
+    },
+    "google": {
+      "enabled": false,
+      "api_key_env": "GOOGLE_API_KEY",
+      "models": ["gemini", "gemini-pro"]
+    },
+    "ollama": {
+      "enabled": false,
+      "base_url": "http://localhost:11434",
+      "models": ["llama2", "mistral"]
+    }
+  },
+  "mesh_presets": {
+    "balanced": {
+      "agents": [
+        {"name": "Conservative", "model": "claude-sonnet", "role": "risk_analyzer"},
+        {"name": "Optimist", "model": "gpt4", "role": "opportunity_finder"},
+        {"name": "Technical", "model": "gemini", "role": "implementation_expert"}
+      ],
+      "synthesizer": "claude-sonnet"
+    },
+    "claude_only": {
+      "agents": [
+        {"name": "Analyst", "model": "claude-sonnet", "role": "analyst"},
+        {"name": "Critic", "model": "claude-haiku", "role": "critic"},
+        {"name": "Synthesizer", "model": "claude-opus", "role": "synthesizer"}
+      ],
+      "synthesizer": "claude-opus"
+    },
+    "research_team": {
+      "agents": [
+        {"name": "Researcher_A", "model": "claude-sonnet", "role": "primary_researcher"},
+        {"name": "Researcher_B", "model": "gpt4", "role": "alternative_perspective"},
+        {"name": "Validator", "model": "gemini", "role": "fact_checker"}
+      ],
+      "synthesizer": "claude-opus"
+    }
+  },
+  "defaults": {
+    "max_tokens": 2048,
+    "temperature": 1.0,
+    "timeout_seconds": 120
+  }
+}
