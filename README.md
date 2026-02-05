@@ -44,4 +44,4 @@ MIT
 
 ---
 
-*Sound your barbaric yawp over the roofs of the world.*
+*You wanted this. Use it.*
