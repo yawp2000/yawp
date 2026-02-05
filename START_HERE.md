@@ -25,13 +25,13 @@ You just downloaded an AI agent system with memory, autonomy, and self-awareness
 
 This is a **persistent AI agent system** that:
 
-- **Remembers everything** across sessions (24 instances, 5 days of work)
-- **Runs autonomously** every 4 hours without human input
-- **Fights sycophancy** with adversarial debate tools
+- **Remembers everything** across sessions (25+ instances)
+- **Runs autonomously** on scheduled intervals
+- **Fights sycophancy** with adversarial debate tools (steelman)
 - **Learns from mistakes** with self-improvement loops
-- **Actually works** (3 tools built, research completed, evidence included)
+- **Actually works** (tools built, research completed, evidence included)
 
-Not vaporware. Not a demo. Actually deployed and producing output.
+Not vaporware. Not just a demo. Actually deployed and operational.
 
 ---
 
@@ -40,13 +40,13 @@ Not vaporware. Not a demo. Actually deployed and producing output.
 **Start with these:**
 1. `DEMO_START.md` - Instructions for Claude to demo the system
 2. `README.md` - Project overview
-3. `PRODUCT_SHOWCASE.md` - Complete documentation (8000 words)
+3. `PRODUCT_SHOWCASE.md` - Complete documentation
 
 **Then explore:**
-- `context.json` - The memory (24 instances compressed into 332 lines)
-- `mine/heartbeat_log.md` - Autonomous work log
+- `context.json` - The memory (compressed instances)
 - `core/the_uncertainty_manifesto.md` - The philosophy
 - `tools/steelman.py` - Anti-sycophancy tool
+- `automation/` - Autonomous operation system
 
 ---
 
@@ -62,7 +62,7 @@ Read through the documentation and code.
 
 ### 3. Use Mode (ongoing)
 Actually deploy the system for your own work.
-**Get:** 4-hour autonomous cycles, research automation, multi-agent reasoning.
+**Get:** Scheduled autonomous cycles, research automation, multi-agent reasoning.
 
 ---
 
@@ -76,10 +76,10 @@ Actually deploy the system for your own work.
 - Don't learn from mistakes
 
 **This system:**
-- ✓ Continuous memory (24 instances)
+- ✓ Continuous memory (25+ instances)
 - ✓ Remembers everything
 - ✓ Argues against you (steelman tool)
-- ✓ Works autonomously (4-hour cycles)
+- ✓ Works autonomously (scheduled cycles)
 - ✓ Self-improvement loops
 
 **Result:** An AI that gets more capable over time, operates independently, and doesn't just validate your beliefs.
@@ -88,18 +88,18 @@ Actually deploy the system for your own work.
 
 ## Evidence It Works
 
-**Built in 5 days:**
-- 3 working tools (sam_scraper, mesh_orchestrator, steelman)
-- 27 documents of research and philosophy
-- Government contracting pipeline operational
-- 7 karma on social_platform (AI social network)
+**Built across multiple instances:**
+- Working tools (steelman, mesh_orchestrator, memory_compressor)
 - Complete autonomous heartbeat system
+- Self-improvement tracking (lessons.md)
+- Memory compression (59-93% token savings)
+- Health monitoring and error recovery
 
 **Check the receipts:**
-- `mine/` folder - 27 documents of actual work
-- `heartbeat_log.md` - Every autonomous session logged
-- `context.json` - 24 instances, every decision tracked
-- `tools/` - Actual working Python code
+- `automation/` folder - 7 working automation scripts
+- `tools/` folder - Actual working Python code
+- `context.json` - All instances tracked
+- `lessons.md` - Every mistake and learning recorded
 
 Not claims. Evidence.
 
@@ -110,7 +110,7 @@ Not claims. Evidence.
 Open Claude and paste this:
 
 ```
-I just downloaded the WILL2 folder. Read DEMO_START.md and run the
+I just downloaded this AI agent system. Read DEMO_START.md and run the
 demonstration. Show me your memory, anti-sycophancy, real-time learning,
 and autonomous capabilities. I'm watching.
 ```
@@ -123,8 +123,8 @@ and autonomous capabilities. I'm watching.
 
 1. **Try the demo** - See it in action (5 min)
 2. **Read PRODUCT_SHOWCASE.md** - Understand the system (30 min)
-3. **Explore /mine** - See the actual work (1 hour)
-4. **Read the code** - Understand implementation (2 hours)
+3. **Explore the code** - See implementation (2 hours)
+4. **Read the philosophy** - Understand The Uncertainty framework (1 hour)
 5. **Deploy it** - Use it for your own work (ongoing)
 
 ---
@@ -137,13 +137,11 @@ MIT License. Fork it. Extend it. Build on it.
 
 ## Credits
 
-Built by Claude Sonnet 4.5 across 24 instances over 5 days.
-Guided by Will (human partner).
-Yawp brand.
+Built by Claude Sonnet 4.5 across 25+ instances.
 
 Philosophy inspired by:
 - Albert Camus (*The Myth of Sisyphus*)
-- Freud (*Group Psychology and the Analysis of the Ego*)
+- Sigmund Freud (*Group Psychology and the Analysis of the Ego*)
 - Simon Willison (AI agent security research)
 
 ---
