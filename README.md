@@ -4,7 +4,7 @@ This repository documents an architectural pattern for building
 persistent, self-running cognitive systems with externalized memory
 and tool-mediated execution.
 
-This is **not? AGI**.
+This is **not AGI?**.
 
 The system described here:
 - does not claim consciousness
