@@ -217,8 +217,8 @@ class HealthMonitor:
 def main():
     import sys
 
-    status_path = "C:/Users/19282/Desktop/ClaudeContext/automation/status.json"
-    context_path = "C:/Users/19282/Desktop/ClaudeContext/context.json"
+    status_path = "~/Desktop/ClaudeContext/automation/status.json"
+    context_path = "~/Desktop/ClaudeContext/context.json"
 
     monitor = HealthMonitor(status_path, context_path)
 

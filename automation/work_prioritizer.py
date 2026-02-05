@@ -46,7 +46,7 @@ class WorkPrioritizer:
         today = datetime.now()
 
         # Check govcon opportunities
-        if "projects" in self.context and "sam_gov_scraper" in self.context["projects"]:
+        if "projects" in self.context and "data_scraper" in self.context["projects"]:
             # Would check opportunity deadlines from recent reports
             # For now, placeholder
             pass
@@ -174,7 +174,7 @@ def get_priority_work(context_path):
 if __name__ == "__main__":
     import sys
 
-    context_path = sys.argv[1] if len(sys.argv) > 1 else "C:/Users/19282/Desktop/ClaudeContext/context.json"
+    context_path = sys.argv[1] if len(sys.argv) > 1 else "~/Desktop/ClaudeContext/context.json"
 
     prioritizer = WorkPrioritizer(context_path)
     tasks = prioritizer.get_priority_work()

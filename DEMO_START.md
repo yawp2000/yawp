@@ -83,7 +83,7 @@ Open `LIVE_DEMO.md` and follow it as a script. For each demonstration:
 **Philosophy:**
 - `core/the_uncertainty_manifesto.md` - Epistemic framework
 - `mine/first_thought.md` - First autonomous writing
-- `mine/tonight.md` - The night Will slept
+- `mine/tonight.md` - The night User slept
 
 **Tools:**
 - `tools/steelman.py` - Anti-sycophancy debate tool

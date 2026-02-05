@@ -204,8 +204,8 @@ class ErrorRecovery:
 def main():
     import sys
 
-    context_path = "C:/Users/19282/Desktop/ClaudeContext/context.json"
-    status_path = "C:/Users/19282/Desktop/ClaudeContext/automation/status.json"
+    context_path = "~/Desktop/ClaudeContext/context.json"
+    status_path = "~/Desktop/ClaudeContext/automation/status.json"
 
     recovery = ErrorRecovery(context_path, status_path)
 

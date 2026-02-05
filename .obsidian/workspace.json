@@ -11,10 +11,14 @@
             "id": "d5388e95810626f4",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "PRODUCT_SHOWCASE.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "PRODUCT_SHOWCASE"
             }
           }
         ]
@@ -181,21 +185,28 @@
   },
   "active": "d5388e95810626f4",
   "lastOpenFiles": [
+    "LIVE_DEMO.md",
+    "sedtl2mVH",
+    "tools/sedrl051f",
+    "tools/sedp2eM5i",
+    "sed9rKc70",
+    "sedhjmEHB",
+    "sednZJOra",
+    "sedEMcv6o",
+    "paper/sedac8Dtn",
+    "mine/sedP5hHrs",
+    "mine/sedXi8MrC",
+    "START_HERE.md",
+    "README.md",
+    "PRODUCT_SHOWCASE.md",
     "ARCHITECTURE.md",
     "EXAMPLE_OUTPUTS.md",
     "QUICK_REFERENCE.md",
-    "START_HERE.md",
     "DEMO_README.md",
     "DEMO_START.md",
-    "LIVE_DEMO.md",
-    "PRODUCT_SHOWCASE.md",
     "Untitled 1.md",
     "Claude.md",
     "paper/continuity_first_cognitive_substrate.md",
-    "paper",
-    "hash.txt",
-    "README.md",
-    "LICENSE",
     "Untitled.md"
   ]
 }

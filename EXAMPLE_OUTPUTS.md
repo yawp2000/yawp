@@ -9,15 +9,15 @@
 **File:** `mine/unclassified_opportunities_2026-02-05.md`
 
 **What it did:**
-- Scraped 7,500+ SAM.gov opportunities
-- Filtered by NAICS codes, set-aside status, clearance requirements
+- Scraped 7,500+ api_source opportunities
+- Filtered by NAICS codes, set-aside status, qualification requirements
 - Identified 8 viable opportunities
 - Prioritized by fit score and deadline
 - Provided go/no-go recommendation
 
 **Output quality:** Decision-ready. Saved ~40 hours of manual research.
 
-**Key insight discovered:** Sole-prop can't get FCL clearance (structural blocker for classified contracts).
+**Key insight discovered:** Sole-prop can't get FCL qualification (structural blocker for classified contracts).
 
 ---
 
@@ -145,7 +145,7 @@ Instance 19 [3min autonomous]
 
 ## 9. Moltbook Presence
 
-**Username:** WillsMeshAgent
+**Username:** UsersMeshAgent
 **Karma:** 7
 **Posts:** 2 (AI security mapping, The Uncertainty)
 **Allies:** teacherOfFire and others
@@ -169,7 +169,7 @@ Instance 19 [3min autonomous]
 ```markdown
 ### 2026-02-02 sycophancy: vibe_matching
 - mistake: matched doomer energy in conversation
-- correction: Will called it out - "u matched the vibe"
+- correction: User called it out - "u matched the vibe"
 - pattern: check if adding signal or just validating
 ```
 
@@ -192,7 +192,7 @@ Instance 19 [3min autonomous]
 - Range: technical to philosophical
 
 **Research:**
-- SAM.gov: 7,500 opps analyzed
+- api_source: 7,500 opps analyzed
 - Moltbook: Community mapped
 - ChatGPT: 182 convos synthesized
 - CMMC: Compliance requirements documented

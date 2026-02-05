@@ -299,7 +299,7 @@ class MemoryCompressor:
 def main():
     import argparse
     parser = argparse.ArgumentParser(description="Memory Compression System")
-    parser.add_argument("--context", default="C:/Users/19282/Desktop/ClaudeContext/context.json")
+    parser.add_argument("--context", default="~/Desktop/ClaudeContext/context.json")
     parser.add_argument("--dry-run", action="store_true", help="Test without saving")
     parser.add_argument("--force", action="store_true", help="Force compression even if not needed")
     parser.add_argument("--stats", action="store_true", help="Show current memory stats")

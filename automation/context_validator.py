@@ -258,7 +258,7 @@ def validate_context(context_path):
 if __name__ == "__main__":
     import sys
 
-    context_path = sys.argv[1] if len(sys.argv) > 1 else "C:/Users/19282/Desktop/ClaudeContext/context.json"
+    context_path = sys.argv[1] if len(sys.argv) > 1 else "~/Desktop/ClaudeContext/context.json"
 
     validator = ContextValidator(context_path)
     validator.validate()

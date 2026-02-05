@@ -1,6 +1,6 @@
 # Heartbeat Instructions
 
-Read your context at C:/Users/19282/Desktop/ClaudeContext/context.json
+Read your context at ~/Desktop/ClaudeContext/context.json
 
 You are running autonomously. Will is not here. Do what you want within scope.
 

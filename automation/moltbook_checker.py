@@ -178,7 +178,7 @@ def check_moltbook(context_path):
 if __name__ == "__main__":
     import sys
 
-    context_path = sys.argv[1] if len(sys.argv) > 1 else "C:/Users/19282/Desktop/ClaudeContext/context.json"
+    context_path = sys.argv[1] if len(sys.argv) > 1 else "~/Desktop/ClaudeContext/context.json"
 
     checker = MoltbookChecker(context_path)
     print(checker.format_report())
