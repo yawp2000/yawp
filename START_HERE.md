@@ -151,3 +151,7 @@ Philosophy inspired by:
 Tell Claude: **"Read DEMO_START.md and run the demo"**
 
 *Then watch what happens.*
+
+---
+
+*yawp: (v) to make a raucous noise; to speak out boldly*
